@@ -7,6 +7,12 @@
         height: 200px;
         background-color: goldenrod;
       }
+      #div2 {
+        width: 200px;
+        height: 200px;
+        background-color: goldenrod;
+        border-radius: 50%;
+      }
 
       /* add CSS code here */
     </style>
@@ -19,13 +25,25 @@
     <button onclick="changeShape()">Make a change!</button>
 
     <script>
+      var square = true;
+
       function changeShape() {
-        if (document.getElementById("div1").style.borderRadius == "50%") {
-          document.getElementById("div1").style.borderRadius = "0px";
+        if (square == true) {
+          var div = document.getElementById("div1");
+          div.id = "div2";
+          sqaure = false;
         } else {
-          document.getElementById("div1").style.borderRadius = "50%";
+          var div = document.getElementById("div2");
+          div.id = "div1";
+          square = true;
         }
       }
+      //   if (document.getElementById("div1").style.borderRadius == "50%") {
+      //     document.getElementById("div1").style.borderRadius = "0px";
+      //   } else {
+      //     document.getElementById("div1").style.borderRadius = "50%";
+      //   }
+      // }
     </script>
   </body>
 </html>
