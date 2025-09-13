@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <style>
-      #div1 {
-        width: 200px;
-        height: 200px;
-        background-color: goldenrod;
-      }
-      #div2 {
-        width: 200px;
-        height: 200px;
-        background-color: goldenrod;
-        border-radius: 50%;
-      }
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: goldenrod;
+        }
 
-      /* add CSS code here */
+        #div2 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: goldenrod;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    
     <h2>Changing HTML Attribute Value</h2>
 
     <div id="div1"></div>
@@ -25,25 +25,40 @@
     <button onclick="changeShape()">Make a change!</button>
 
     <script>
-      var square = true;
-
-      function changeShape() {
-        if (square == true) {
-          var div = document.getElementById("div1");
-          div.id = "div2";
-          sqaure = false;
-        } else {
-          var div = document.getElementById("div2");
-          div.id = "div1";
-          square = true;
+        // variable defined outside functions is a global variable
+        // which is accessible by functions
+        var square = true;
+ 
+        function changeShape() {
+        
+            if (square) {
+                var div = document.getElementById("div1");
+                div.id = "div2";
+                square = false;
+            } else {
+                var div = document.getElementById("div2");
+                div.id = "div1";
+                square = true;
+            }
+            
         }
-      }
-      //   if (document.getElementById("div1").style.borderRadius == "50%") {
-      //     document.getElementById("div1").style.borderRadius = "0px";
-      //   } else {
-      //     document.getElementById("div1").style.borderRadius = "50%";
-      //   }
-      // }
+
+        // Alternative solution by changing style attribute directly
+        // Won't pass test case but important to know
+        function changeShape2() {
+            var div = document.getElementById("div1");
+            if (square) {
+                div.style.borderRadius = "50%";
+                square = false;
+            } else {
+                div.style.borderRadius = "0%";
+                square = true;
+            }
+            
+        }
+      
+
     </script>
-  </body>
+
+</body>
 </html>
